@@ -116,9 +116,7 @@ case $profile in
                 cp ~/glinet/pkg_config/glinet_depends_mt2500.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
             elif [[ $profile == *rax3000m* ]]; then
-                cp ~/glinet/pkg_config/gl_pkg_config_rax3000m.mk  ~/glinet/mt7981/gl_pkg_config.mk
-                cp ~/glinet/pkg_config/glinet_depends_rax3000m.yml  ./profiles/glinet_depends.yml
-                ./scripts/gen_config.py glinet_depends custom
+                ./scripts/gen_config.py target_mt7981_rax3000m-emmc glinet_depends glinet_nas
             else
                 ./scripts/gen_config.py $profile glinet_nas custom
             fi
