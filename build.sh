@@ -104,7 +104,7 @@ case $profile in
     target_mt7981_gl-x3000|\
     target_mt7981_gl-xe3000|\
     target_mt7981_rax3000m-emmc)
-        python3 setup.py -c configs/immortalwrt-mt798x.yml
+        python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
         ln -s $base/gl-infra-builder/mt7981 ~/openwrt && cd ~/openwrt    
         if [[ $ui == true  ]]; then
             if [[ $profile == *mt3000* ]]; then
