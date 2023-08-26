@@ -33,7 +33,7 @@ if [ ! -n "$tagm" ]; then
 fi
 
 if [[ $ui == true ]]; then
-    git clone -b $tagm https://github.com/gl-inet/glinet4.x.git ~/glinet
+    git clone -b $tagm https://github.com/xiaomeng9597/glinet4.x.git ~/glinet
 fi
 
 echo "Start..."
@@ -116,8 +116,8 @@ case $profile in
                 cp ~/glinet/pkg_config/glinet_depends_mt2500.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
             elif [[ $profile == *rax3000m* ]]; then
-                cp ~/glinet/pkg_config/gl_pkg_config_mt2500.mk  ~/glinet/mt7981/gl_pkg_config.mk
-                cp ~/glinet/pkg_config/glinet_depends_mt2500.yml  ./profiles/glinet_depends.yml
+                cp ~/glinet/pkg_config/gl_pkg_config_rax3000m.mk  ~/glinet/mt7981/gl_pkg_config.mk
+                cp ~/glinet/pkg_config/glinet_depends_rax3000m.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
             else
                 ./scripts/gen_config.py $profile glinet_nas custom
