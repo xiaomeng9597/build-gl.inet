@@ -31,6 +31,7 @@ on:
         - target_ath79_gl-ar300m-nor
         - target_mt7981_gl-x3000
         - target_mt7981_gl-xe3000
+        - target_mt7981_rax3000m-emmc
 
       ui:
         description: '是否包含官方UI (目前仅IPQ6018系列、GL-MT2500、GL-MT3000、GL-A1300和GL-S200支持官方UI)'
