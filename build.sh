@@ -102,7 +102,8 @@ case $profile in
     target_mt7981_gl-mt2500|\
     target_mt7981_gl-mt3000|\
     target_mt7981_gl-x3000|\
-    target_mt7981_gl-xe3000)
+    target_mt7981_gl-xe3000|\
+    target_mt7981_rax3000m-emmc)
         python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
         ln -s $base/gl-infra-builder/mt7981 ~/openwrt && cd ~/openwrt    
         if [[ $ui == true  ]]; then
@@ -111,6 +112,10 @@ case $profile in
                 cp ~/glinet/pkg_config/glinet_depends_mt3000.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
             elif [[ $profile == *mt2500* ]]; then
+                cp ~/glinet/pkg_config/gl_pkg_config_mt2500.mk  ~/glinet/mt7981/gl_pkg_config.mk
+                cp ~/glinet/pkg_config/glinet_depends_mt2500.yml  ./profiles/glinet_depends.yml
+                ./scripts/gen_config.py glinet_depends custom
+            elif [[ $profile == *rax3000m* ]]; then
                 cp ~/glinet/pkg_config/gl_pkg_config_mt2500.mk  ~/glinet/mt7981/gl_pkg_config.mk
                 cp ~/glinet/pkg_config/glinet_depends_mt2500.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
